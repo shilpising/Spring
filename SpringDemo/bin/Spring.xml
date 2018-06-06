@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+<beans>
+<bean id="triangle" class="org.spring.Triangle">
+<property name="type" value="Equilateral"/>
+<property name="length" value="10"/>
+</bean>
+
+<bean id="triangleConstructor" class="org.spring.TriangleConstructor">
+<!--<constructor-arg  value="Equilateral"/>
+<constructor-arg  value="10"/> -->
+<constructor-arg  index="0" value="Equilateral"/>
+<constructor-arg   index="1" value="20"/>
+</bean>
+
+	<bean id="trianglePoint" class="org.spring.TrianglePoint">
+		<property name="point1" ref="zeroPoint"/>
+		<property name="point2">
+			<bean class="org.spring.Point">
+				<property name="x" value="-20"/>
+				<property name="y" value="0"/>
+			</bean>
+		</property>
+		<property name="point3">
+			<bean class="org.spring.Point">
+				<property name="x" value="20"/>
+				<property name="y" value="0"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="triangleCollection" class="org.spring.TriangleCollection">
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint"/>
+				<ref bean="pointA"/>
+				<ref bean="pointB"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="zeroPoint" class="org.spring.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointA" class="org.spring.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointB" class="org.spring.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="0"/>
+	</bean>
+</beans>
