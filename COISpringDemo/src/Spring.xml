@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+<beans>
+	<bean id="triangle" class="org.shilpi.Triangle" init-method="init" destroy-method="cleanUp">
+		<constructor-arg index="0" value="10"/>
+		<constructor-arg index="1" value="20"/>
+	</bean>
+	
+	<bean id="circle" class="org.shilpi.Circle" >
+		<constructor-arg index="0" value="10"/>
+	</bean>
+
+<bean class="org.shilpi.BeanPostProcessorImpl"/>
+
+</beans>
