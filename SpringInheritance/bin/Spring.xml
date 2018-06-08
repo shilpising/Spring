@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+<beans>
+
+	<bean id="parentTriangle" class="com.shilpi.TrianglePoint" abstract="true">
+		<property name="zeropoint" ref="zeropoint"/>
+	</bean>
+	
+	<bean id="triangle1" class="com.shilpi.TrianglePoint" parent="parentTriangle">
+		<property name="pointA" ref="pointA"/>
+		<property name="pointB" ref="pointB"/>
+	</bean>
+
+	<bean id="triangle2" class="com.shilpi.TrianglePoint" parent="parentTriangle">
+		<property name="pointA" ref="pointA"/>
+	</bean>
+
+	
+	<bean id="zeropoint" class="com.shilpi.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointA" class="com.shilpi.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointB" class="com.shilpi.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="0"/>
+	</bean>
+</beans>
