@@ -1,0 +1,3 @@
+com\JMSExample\JMSDemo\JmsDemoApplication.class
+com\JMSExample\JMSDemo\model\Receiver.class
+com\JMSExample\JMSDemo\model\Email.class
